@@ -63,6 +63,43 @@
 }
 .hot-goods p{
 	text-align: center;
-	color: #d2d2d2;
+	color:#5FB878;
 	padding-top: 5px;
+}
+.fashion-head p:first-child{
+	font-size: 30px;
+	color:#d2d2d2;
+	text-align: center;
+}
+.fashion-head p:nth-child(2){
+	color: #d2d2d2;
+	text-align: center;
+}
+.line:before,.line:after{
+	content: '';                 
+   	position: absolute;         
+	top:177%;
+	background:#c2c2c2;      
+	width: 22%;
+	height: 1px;
+}
+.line:before{
+	left: 17%;
+}
+.line:after{
+	right: 17%;
+}
+.foot{
+	margin-top: 20px;
+	width: 100%;
+	background-color: #2F4056;
+	height: 100px;
+}
+.clear{
+	clear: both;
+}
+.foot p{
+	text-align: center;
+	line-height: 100px;
+	color: #c2c2c2;
 }

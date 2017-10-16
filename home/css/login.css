@@ -1,0 +1,38 @@
+body{
+	background:url(../img/bg2.jpg) no-repeat;
+}
+.content{
+	width: 1200px;
+	margin: 0 auto;
+}
+.layui-input{
+	width: 400px;
+}
+h1{
+	font-size: 40px;
+	color:#5FB878;
+}
+form{
+	position: absolute;
+	top: 25%;
+	left: 10%;
+}
+.reg{
+	width: 200px;
+	height: 40px;
+	background-color: #ccc;
+}
+.regist,.login{
+	width: 100px;
+	height: 40px;
+	background-color: #009688;
+	float: left;
+	margin: 10px;
+	cursor: pointer;
+}
+.login p,.regist p{
+	line-height: 40px;
+	text-align: center;
+	width: 100%;
+	color: #c2c2c2;
+}
