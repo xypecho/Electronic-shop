@@ -1,0 +1,28 @@
+.container{
+	width: 100%;
+	margin: 0 auto;
+}
+.container:first-child{
+	background-color: #393D49;
+	height: 60px;
+}
+.page-header{
+	color: #009688;
+	font-size: 30px;
+	line-height: 60px;
+}
+.left{
+	width: 10%;
+	float: left;
+}
+.right{
+	width: 89%;
+	float: left;
+}
+h4{
+	font-size: 20px;
+	color: #2F4056;
+}
+ul li{
+	padding: 10px;
+}

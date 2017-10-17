@@ -83,3 +83,27 @@ a:hover{
 	line-height: 40px;
 	border-radius: 20px;
 }
+.head-pic{
+	width: 100px;
+	height: 120px;
+	float: left;
+}
+.head-pic img{
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 100px;
+}
+.head-pic span{
+	text-align: center;
+	width:100px;
+	display: block;
+}
+.comment{
+	width:1000px;
+	float: right;
+	text-align: left;
+}
+.delete{
+	background-color: #FF5722;
+}

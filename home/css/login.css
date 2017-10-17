@@ -22,7 +22,7 @@ form{
 	height: 40px;
 	background-color: #ccc;
 }
-.regist,.login{
+.regist,.login,.admin{
 	width: 100px;
 	height: 40px;
 	background-color: #009688;
@@ -30,7 +30,7 @@ form{
 	margin: 10px;
 	cursor: pointer;
 }
-.login p,.regist p{
+.login p,.regist p,.admin p{
 	line-height: 40px;
 	text-align: center;
 	width: 100%;

@@ -2,7 +2,7 @@
 			<div class="head">
 				<div class="nav">
 					<ul>
-						<li><a href="">首页</a></li>
+						<li><a href="/">首页</a></li>
 						<li><a href="">特产</a></li>
 						<li><a href="">零食</a></li>
 						<li><a href="">饮料</a></li>
