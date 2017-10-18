@@ -19,10 +19,37 @@
 	width: 89%;
 	float: left;
 }
+.right img{
+	width: 100%;
+}
 h4{
 	font-size: 20px;
 	color: #2F4056;
 }
 ul li{
 	padding: 10px;
+}
+table tr td{
+	text-align: center;
+}
+.layui-table th{
+	text-align: center;
+}
+.adduser a{
+	display: block;
+	width: 40px;
+	height: 30px;
+	background-color:#01AAED; 
+	float: left;
+	margin-left: 40px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+}
+.adduser img{
+	width: 100px;
+	height: 100px;
+}
+form{
+	margin-top: 20px;
 }

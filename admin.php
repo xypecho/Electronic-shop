@@ -28,7 +28,7 @@
 			<h4>退出</h4>
 		</div>
 		<div class="right">
-			
+			<img src="admin/img/11img.jpg">
 		</div>
 		</div>
 	</div>
