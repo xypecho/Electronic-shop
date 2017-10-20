@@ -1,3 +1,11 @@
+<?php 
+	session_start();
+	if (!$_SESSION['username']) {
+		echo "<script>location.href='login.php'</script>";
+		exit();
+	}
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +31,8 @@
 					</ul>
 				</div>
 				<a href="home/html/account.php"><i class="layui-icon">&#xe698;</i></a>
-				<a href=""><span class="user" name="user">爱在公元前</span></a>
+				<a href="" style="float: right;margin-top: 30px;margin-right: 32px;padding-left: 30px">退出登录</a>
+				<a href="exit.php"><span class="user" name="user"><?php echo $_SESSION['username']; ?></span></a>
 			</div>
 		</div>
 		<div class="banner">

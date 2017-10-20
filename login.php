@@ -40,7 +40,7 @@
 		</form>
 
 
-		<form class="layui-form" action="check.php" id="regist" method="post">
+		<form class="layui-form" action="add.php" id="regist" method="post">
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">用户名</label>
 		    <div class="layui-input-block">
@@ -53,10 +53,16 @@
 		      <input type="password" name="password" required placeholder="请输入密码"  class="layui-input">
 		    </div>
 		  </div>
+<!-- 		  <div class="layui-form-item">
+		    <label class="layui-form-label">确认密码</label>
+		    <div class="layui-input-inline">
+		      <input type="password" name="password" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
+		    </div>
+		  </div> -->
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">验证码</label>
 				 <img src="reg.php" onclick="this.src='reg.php?rand'+Math.random()" style="float:left;">
-				 <input type="text" name="" class="layui-input" style="float: left;width: 100px;margin-left: 20px">
+				 <input type="text" name="reg" class="layui-input" style="float: left;width: 100px;margin-left: 20px">
 		  </div>
 		  <input type="hidden" name="registdate" value="" class="time">
 		  <div class="layui-form-item">
