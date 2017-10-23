@@ -1,3 +1,10 @@
+<?php 
+	$pdo=new PDO("mysql:host=localhost;dbname=test","root","123456");
+	$sql="select * from user";
+	$smt=$pdo->prepare($sql);
+	$smt->execute();
+	$rows=$smt->fetchAll();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +24,7 @@
 		<div class="left">
 			<h4>用户管理</h4>
 			<ul>
-				<li><a href="admin/html/users.php">查看用户</a></li>
+				<li><a href="javascript:;">查看用户</a></li>
 				<li><a href="admin/html/adduser.php">添加用户</a></li>
 			</ul>
 			<h4>商品管理</h4>
@@ -43,24 +50,17 @@
 			    </tr> 
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <td>1</td>
-			      <td>呆呆</td>
-			      <td>123456a</td>
-			      <td>2016-11-29</td>
-			    </tr>
-			    <tr>
-			      <td>1</td>
-			      <td>呆呆</td>
-			      <td>123456a</td>
-			      <td>2016-11-29</td>
-			    </tr>
-			    <tr>
-			      <td>1</td>
-			      <td>呆呆</td>
-			      <td>123456a</td>
-			      <td>2016-11-29</td>
-			    </tr>
+				<?php 
+					foreach ($rows as $row) {
+						echo "<tr>";
+						echo "<td>{$row['id']}</td>";
+						echo "<td>{$row['username']}</td>";
+						echo "<td>{$row['password']}</td>";
+						$row['registdate']=date('Y-m-d H:i:s',$row['registdate']);
+						echo "<td>{$row['registdate']}</td>";
+						echo "</tr>";
+					}
+				 ?>
 			  </tbody>
 			</table>
 		</div>

@@ -1,3 +1,6 @@
+<?php 
+ date_default_timezone_set ('PRC');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +67,7 @@
 				 <img src="reg.php" onclick="this.src='reg.php?rand'+Math.random()" style="float:left;">
 				 <input type="text" name="reg" class="layui-input" style="float: left;width: 100px;margin-left: 20px">
 		  </div>
-		  <input type="hidden" name="registdate" value="" class="time">
+		  <input type="hidden" name="registdate" value="<?php echo strtotime('now'); ?>" class="time">
 		  <div class="layui-form-item">
 		    <div class="layui-input-block">
 		      <button class="layui-btn" type="submit">注册</button>
@@ -114,18 +117,20 @@
 			$("#regist").hide();
 			$("#admin").show();
 		})
-		function getdate(){
-			var date=new Date();
-			year=date.getFullYear();
-			month=date.getMonth()+1;
-			day=date.getDate();
-			hour=date.getHours();
-			min=date.getMinutes();
-			sec=date.getSeconds();
-			var time=year+"-"+month+"-"+day+"-"+hour+":"+min+":"+sec;
-			$(".time").val(time);	
-		}
-		setInterval(getdate(),100);
-		console.log($(".time").val());
+		// function getdate(){
+		// 	// var date=new Date();
+		// 	// year=date.getFullYear();
+		// 	// month=date.getMonth()+1;
+		// 	// day=date.getDate();
+		// 	// hour=date.getHours();
+		// 	// min=date.getMinutes();
+		// 	// sec=date.getSeconds();
+		// 	// var time=year+"-"+month+"-"+day+"-"+hour+":"+min+":"+sec;
+		// 	var timestamp=(new Date().getTime());
+		// 	$(".time").val(timestamp);
+		// }
+		// getdate();
+		// setInterval(getdate(),1);
+		// console.log($(".time").val());
 	</script>
 </html>

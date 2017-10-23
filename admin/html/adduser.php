@@ -1,3 +1,6 @@
+<?php 
+	date_default_timezone_set ('PRC');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,39 +31,25 @@
 			<h4>退出</h4>
 		</div>
 		<div class="right">
-			<table class="layui-table adduser">
-			  <colgroup>
-			    <col width="150">
-			    <col width="200">
-			    <col>
-			  </colgroup>
-			  <thead>
-			    <tr>
-			      <th>用户名称</th>
-			      <th>密码</th>
-			      <th>操作</th>
-			    </tr> 
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <td contenteditable="true">呆呆</td>
-			      <td contenteditable="true">123456a</td>
-			      <td><a href="">增加</a><a href="">删除</a></td>
-			    </tr>
-			    <tr>
-			      <td contenteditable="true">呆呆</td>
-			      <td contenteditable="true">123456a</td>
-			      <td><a href="">增加</a><a href="">删除</a></td>
-			    </tr>
-			    <tr>
-			      <td contenteditable="true">呆呆</td>
-			      <td contenteditable="true">123456a</td>
-			      <td><a href="">增加</a><a href="">删除</a></td>
-			    </tr>
-			  </tbody>
-			</table>
+			<form action="add.php" method="post">
+			<div class="layui-form-item">
+				<label class="layui-form-label">用户名</label>
+				<div class="layui-input-inline">
+					<input type="text" name="username" class="layui-input"></div>
+			</div>
+				  <div class="layui-form-item">
+				  	<label class="layui-form-label">密码</label>
+				  	<div class="layui-input-inline">
+				  		<input type="text" name="password"  class="layui-input"></div>
+				  </div>
+				  <input type="hidden" name="registdate" value="<?php echo strtotime('now'); ?>" class="time">
+				  <button type="submit" 	class="layui-btn">提交</button>
+			</form>
 		</div>
 		</div>
 	</div>
 </body>
+	<script type="text/javascript">
+		
+	</script>
 </html>
