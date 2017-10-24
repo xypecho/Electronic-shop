@@ -77,17 +77,17 @@
 		</form>
 
 
-		<form class="layui-form" action="" id="admin">
+		<form class="layui-form" action="checkadmin.php" id="admin" method="post">
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">用户名</label>
 		    <div class="layui-input-block">
-		      <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+		      <input type="text" name="username" placeholder="请输入用户名" class="layui-input">
 		    </div>
 		  </div>
 		  <div class="layui-form-item">
 		    <label class="layui-form-label">密码</label>
 		    <div class="layui-input-inline">
-		      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+		      <input type="password" name="password" placeholder="请输入密码" class="layui-input">
 		    </div>
 		  </div>
 		  <div class="layui-form-item">

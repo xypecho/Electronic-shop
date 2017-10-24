@@ -17,40 +17,40 @@
 		<div class="left">
 			<h4>用户管理</h4>
 			<ul>
-				<li><a href="admin/html/users.php">查看用户</a></li>
-				<li><a href="admin/html/adduser.php">添加用户</a></li>
+				<li><a href="users.php">查看用户</a></li>
+				<li><a href="adduser.php">添加用户</a></li>
 			</ul>
 			<h4>商品管理</h4>
 			<ul>
-				<li><a href="admin/html/shop.php">查看商品</a></li>
-				<li><a href="admin/html/addshop.php">添加商品</a></li>
+				<li><a href="shop.php">查看商品</a></li>
+				<li><a href="javascript:;">添加商品</a></li>
 			</ul>
 			<h4>退出</h4>
 		</div>
 		<div class="right">
-			<form class="layui-form" action="">
+			<form class="layui-form" action="checkaddshop.php" method="post" enctype="multipart/form-data">
 			  <div class="layui-form-item">
 			    <label class="layui-form-label">商品名称</label>
 			    <div class="layui-input-inline">
-			      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+			      <input type="text" name="name" class="layui-input">
 			    </div>
 			  </div>
 			  <div class="layui-form-item">
 			    <label class="layui-form-label">价格</label>
 			    <div class="layui-input-inline">
-			      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+			      <input type="text" name="price" class="layui-input">
 			    </div>
 			  </div>
 			  <div class="layui-form-item">
 			    <label class="layui-form-label">库存</label>
 			    <div class="layui-input-inline">
-			      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+			      <input type="text" name="count" class="layui-input">
 			    </div>
 			  </div>
 			  <div class="layui-form-item">
 			    <label class="layui-form-label">上传图片</label>
 			    <div class="layui-input-inline">
-			      <input type="file" name="password" required lay-verify="required"  class="layui-input">
+			      <input type="file" name="img_path" class="layui-input">
 			    </div>
 			  </div>
 			  <div class="layui-form-item">

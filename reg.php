@@ -17,7 +17,7 @@
 	$_SESSION["vercode"]=$str;
 	imagettftext($img,20,0,10,30,$white,"msyhbd.ttf",$str);//输出文字，第一个数字代表fontsize，
 for($i=0;$i<60;$i++){
-	imagearc($img,mt_rand(0,150),mt_rand(0,50),mt_rand(0,150),mt_rand(0,50),mt_rand(0,360),mt_rand(0,360),$black);
+	imagearc($img,mt_rand(0,150),mt_rand(0,50),mt_rand(0,150),mt_rand(0,50),mt_rand(0,360),mt_rand(0,360),$blue);
 }
 	//5、输出图片或者保存图片
 	header("content-type:image/png");

@@ -20,13 +20,13 @@
 		<div class="left">
 			<h4>用户管理</h4>
 			<ul>
-				<li><a href="admin/html/users.php">查看用户</a></li>
-				<li><a href="admin/html/adduser.php">添加用户</a></li>
+				<li><a href="users.php">查看用户</a></li>
+				<li><a href="javascript:;">添加用户</a></li>
 			</ul>
 			<h4>商品管理</h4>
 			<ul>
-				<li><a href="admin/html/shop.php">查看商品</a></li>
-				<li><a href="admin/html/addshop.php">添加商品</a></li>
+				<li><a href="shop.php">查看商品</a></li>
+				<li><a href="addshop.php">添加商品</a></li>
 			</ul>
 			<h4>退出</h4>
 		</div>
@@ -43,7 +43,7 @@
 				  		<input type="text" name="password"  class="layui-input"></div>
 				  </div>
 				  <input type="hidden" name="registdate" value="<?php echo strtotime('now'); ?>" class="time">
-				  <button type="submit" 	class="layui-btn">提交</button>
+				  <button type="submit" class="layui-btn">提交</button>
 			</form>
 		</div>
 		</div>
