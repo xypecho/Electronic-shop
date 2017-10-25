@@ -5,6 +5,11 @@
 		exit();
 	}
 
+	$pdo=new PDO("mysql:host=localhost;dbname=test","root","123456");
+	$sql="select * from shop";
+	$smt=$pdo->prepare($sql);
+	$smt->execute();
+	$rows=$smt->fetchAll();
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +21,12 @@
 	<script type="text/javascript" src="public/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="public/js/layer.js"></script>
 	<script type="text/javascript" src="public/js/flow.js"></script>
+	<style type="text/css">
+		img{
+			width: 240px;
+			height: 240.59px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -44,13 +55,23 @@
 					<p>热卖推荐~或许你会喜欢</p>
 				</div>
 				<div class="hot-body">
+				<?php 
+					foreach ($rows as $row) {
+						echo "<div class='hot-goods'>";
+						echo "<a href=''><img src='/admin/html/{$row['img_path']}'></a>";
+						echo "<a href=''><p>{$row['name']}</p></a>";
+						echo "<a href=''><p>{$row['price']}</p></a>";
+						echo "<div>";
+					}
+				?>
+					<!-- <div class="hot-goods"><a href="home/html/product.php"><img src="home/img/goods.jpg"></a><a href=""><p>小黑裙连衣裙</p></a><a href=""><p>￥199</p></a></div>
 					<div class="hot-goods"><a href="home/html/product.php"><img src="home/img/goods.jpg"></a><a href=""><p>小黑裙连衣裙</p></a><a href=""><p>￥199</p></a></div>
 					<div class="hot-goods"><a href="home/html/product.php"><img src="home/img/goods.jpg"></a><a href=""><p>小黑裙连衣裙</p></a><a href=""><p>￥199</p></a></div>
-					<div class="hot-goods"><a href="home/html/product.php"><img src="home/img/goods.jpg"></a><a href=""><p>小黑裙连衣裙</p></a><a href=""><p>￥199</p></a></div>
-					<div class="hot-goods"><a href="home/html/product.php"><img src="home/img/goods.jpg"></a><a href=""><p>小黑裙连衣裙</p></a><a href=""><p>￥199</p></a></div>
+					<div class="hot-goods"><a href="home/html/product.php"><img src="home/img/goods.jpg"></a><a href=""><p>小黑裙连衣裙</p></a><a href=""><p>￥199</p></a></div> -->
 				</div>
 			</div>
 		</div>
+		<div class="clear"></div>
 		<div class="fashion">
 			<div class="content">
 				<div class="fashion-head">

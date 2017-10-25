@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 	<script type="text/javascript" src="../../public/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="../../public/js/layer.js"></script>
+	<script type="text/javascript" src="../../public/js/layui.js"></script>
+	<script type="text/javascript" src="../../public/js/upload.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -49,9 +51,7 @@
 			  </div>
 			  <div class="layui-form-item">
 			    <label class="layui-form-label">上传图片</label>
-			    <div class="layui-input-inline">
-			      <input type="file" name="img_path" class="layui-input">
-			    </div>
+			  	<input class="layui-btn" id="test1" name="img_path" type="file">
 			  </div>
 			  <div class="layui-form-item">
 			    <div class="layui-input-block">
@@ -63,5 +63,22 @@
 		</div>
 		</div>
 	</div>
+<!-- 	<script>
+	layui.use('upload', function(){
+	  var upload = layui.upload;
+	  //执行实例
+	  var uploadInst = upload.render({
+	    elem: '#test1' //绑定元素
+	    ,url: 'checkaddshop.php' //上传接口
+	    ,done: function(res){
+	      console.log(res);
+	      return false;
+	    }
+	    ,error: function(){
+	      alert($("input[name='img_path']").text());
+	    }
+	  });
+	});
+	</script> -->
 </body>
 </html>

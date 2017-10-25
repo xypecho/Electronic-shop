@@ -1,3 +1,10 @@
+<?php 
+	$pdo=new PDO("mysql:host=localhost;dbname=test","root","123456");
+	$sql="select * from shop";
+	$smt=$pdo->prepare($sql);
+	$smt->execute();
+	$rows=$smt->fetchAll();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,14 +52,27 @@
 			    </tr> 
 			  </thead>
 			  <tbody>
-			    <tr>
+			  <?php
+  				foreach( $rows as $row ){
+  				echo "<tr>";
+  				echo "<td>{$row['id']}</td>";
+  				echo "<td>{$row['name']}</td>";
+  				echo "<td><img src='{$row['img_path']}'></td>";
+  				echo "<td>{$row['price']}</td>";
+  				echo "<td>{$row['count']}</td>";
+				echo "<td><a href='deleteshop.php?id={$row["id"]}'>删除</a></td>";
+  				echo "</tr>";
+  				}
+			  ?>
+<!-- 			    <tr>
 			      <td>1</td>
 				  <td contenteditable="true">小黑裙</td>
 			      <td contenteditable="true"><img src="../../home/img/goods.jpg"></td>
 			      <td>199元</td>
 			      <td>99</td>
 			      <td><a href="">增加</a><a href="">删除</a></td>
-			    </tr>
+			    
+			    </tr> -->
 			  </tbody>
 			</table>
 		</div>
