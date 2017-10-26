@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	$pdo=new PDO("mysql:host=localhost;dbname=test","root","123456");
+	$id=$_GET['id'];
+	$sql="select * from shop where id='{$id}'";
+	$smt=$pdo->prepare($sql);
+	$smt->execute();
+	$rows=$smt->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +28,18 @@
 		  	<td>是否加入购物车</td>
 		  </tr>
 		  <tr>
-		  	<td><img src="../img/goods.jpg"></td>
+		  <?php 
+			foreach($rows as $row){
+				echo "<td><img src='/admin/html/{$row["img_path"]}'></td>";
+				echo "<td>{$row['price']}</td>";
+				echo "<td>{$row['count']}</td>";
+				echo "<td><a href='addtocar.php?id={$row["id"]}' class='shop-car'>加入购物车</a></td>";
+			}
+		  ?>
+		  	<!-- <td><img src="../img/goods.jpg"></td>
 		  	<td>199元</td>
 		  	<td>99</td>
-		  	<td><a href="javascript:;" class="shop-car">加入购物车</a></td>
+		  	<td><a href="javascript:;" class="shop-car">加入购物车</a></td> -->
 		  </tr>
 		</table>
 	<fieldset class="layui-elem-field">
