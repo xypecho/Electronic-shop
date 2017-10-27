@@ -31,9 +31,9 @@
 			echo "<tr>";
 			echo "<td>{$row['name']}</td>";
 			echo "<td><img src='/admin/html/{$row["img_path"]}'></td>";
-			echo "<td>{$row['price']}</td>";
-			echo '<td><a href="javascript:;" class="layui-btn layui-btn-mini">-</a> 1<a href="javascript:;" class="layui-btn layui-btn-mini">+</a></td>';
-			echo "<td><a href='addtocar.php?id={$row["id"]}' class='shop-car'>从购物车删除</a></td>";
+			echo "<td class='price'>{$row['price']}</td>";
+			echo '<td><a href="javascript:;" class="layui-btn layui-btn-mini cut" onclick="cut(this)">-</a><input type="text" name="count" class="count" value="1"><a href="javascript:;" class="layui-btn layui-btn-mini add" onclick="add(this)">+</a></td>';
+			echo "<td class='jisuan'><a href='deleteformcar.php?id={$row["id"]}' class='shop-car'>从购物车删除</a></td>";
 			echo "</tr>";
 		}
 	  ?>
@@ -45,11 +45,41 @@
 	  	<td><a href="javascript:;" class="shop-car delete">删除</a></td>
 	  </tr> -->
 	  <tr>
-	  	<td>合计</td>
-	  	<td colspan="4">399元</td>
+	  	<td class="layui-btn tj">合计</td>
+	  	<td colspan="4" class="total"></td>
 	  </tr>
 	</table>
 	</div>
 	<?php include "foot.php" ?>
 </body>
+	<script type="text/javascript">
+		function cut(cut){
+			var count=$(cut).parent().find(".count").val();
+				count=count-1;
+				if (count>=0) {
+					$(cut).parent().find(".count").val(count);
+				}else{
+					return false;
+				}
+		}
+		function add(add){
+			var count=$(add).parent().find(".count").val();
+			count++;
+			$(add).parent().find(".count").val(count);
+		}
+		$(".cut,.add").click(function(){
+			var price=$(this).parent().parent().find(".price").text();
+			var count=$(this).parent().parent().find(".count").val();
+			var total=price*count;
+			$(this).parent().parent().find(".jisuan").attr("data-total",total);
+			var jisuan=$(this).parent().parent().find(".jisuan").attr("data-total");
+			$('tableId .jisuan').each(function() { 
+			$(this).find('.jisuan:eq(columnIndex)').each(function() { 
+			totalAmount += parseFloat($(this).text());
+			})
+			});
+			console.log(arr);
+			$(".total").text(jisuan+=jisuan);
+		})
+	</script>
 </html>
