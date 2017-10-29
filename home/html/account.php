@@ -37,15 +37,8 @@
 			echo "</tr>";
 		}
 	  ?>
-<!-- 	  <tr>
-	  	<td>小黑裙连衣裙</td>
-	  	<td><img src="../img/goods.jpg"></td>
-	  	<td>199元</td>
-	  	<td><a href="javascript:;" class="layui-btn layui-btn-mini">-</a> 1<a href="javascript:;" class="layui-btn layui-btn-mini">+</a></td>
-	  	<td><a href="javascript:;" class="shop-car delete">删除</a></td>
-	  </tr> -->
 	  <tr>
-	  	<td class="layui-btn tj">合计</td>
+	  	<td>合计</td>
 	  	<td colspan="4" class="total"></td>
 	  </tr>
 	</table>
@@ -53,6 +46,8 @@
 	<?php include "foot.php" ?>
 </body>
 	<script type="text/javascript">
+	var price=$(".price");
+	var count=$(".count");
 		function cut(cut){
 			var count=$(cut).parent().find(".count").val();
 				count=count-1;
@@ -61,25 +56,27 @@
 				}else{
 					return false;
 				}
+			getTotal();
 		}
 		function add(add){
 			var count=$(add).parent().find(".count").val();
 			count++;
 			$(add).parent().find(".count").val(count);
+			getTotal();
 		}
-		$(".cut,.add").click(function(){
-			var price=$(this).parent().parent().find(".price").text();
-			var count=$(this).parent().parent().find(".count").val();
-			var total=price*count;
-			$(this).parent().parent().find(".jisuan").attr("data-total",total);
-			var jisuan=$(this).parent().parent().find(".jisuan").attr("data-total");
-			$('tableId .jisuan').each(function() { 
-			$(this).find('.jisuan:eq(columnIndex)').each(function() { 
-			totalAmount += parseFloat($(this).text());
-			})
-			});
+		function getTotal(){
+			var total=0;
+			var arr=new Array();
+			for (var i = 0; i < price.length; i++) {
+				total=price.eq(i).text()*count.eq(i).val();
+				arr.push(total);
+			}
 			console.log(arr);
-			$(".total").text(jisuan+=jisuan);
-		})
+			var sum=0;
+			for (var i = 0; i < arr.length; i++) {
+				sum+=arr[i];
+			}
+			$(".total").text(sum);
+		}
 	</script>
 </html>
